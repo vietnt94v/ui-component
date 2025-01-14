@@ -6,8 +6,8 @@ import {
   DrawerContainer,
   DrawerFooter,
   DrawerHeader,
-} from "./DrawerStyled";
-import { DrawerProps } from "./type";
+} from "./Drawer.styled";
+import { DrawerProps } from "./Drawer.types";
 import CloseIcon from "../icons/CloseIcon";
 
 const Drawer: React.FC<DrawerProps> = ({

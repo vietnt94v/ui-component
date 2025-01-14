@@ -1,7 +1,7 @@
 import styled, { keyframes, css } from "styled-components";
-import { TSize, TPlacement } from "./type";
+import { TSize, TPlacement } from "./Drawer.types";
+import { themeColors } from "@/app/themes/colors";
 
-// Animations
 const slideInEnd = keyframes`
   from {
     transform: translateX(100%);
@@ -133,6 +133,8 @@ export const DrawerCloseButton = styled.button`
   position: absolute;
   top: 10px;
   right: 10px;
+  padding: 8px;
   background-color: transparent;
-  border: 1px solid  #f2f2f2;
+  border: 1px solid ${themeColors?.gray};
+  border-radius: 4px;
 `;

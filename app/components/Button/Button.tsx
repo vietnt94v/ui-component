@@ -6,18 +6,17 @@ const Button: React.FC<ButtonProps> = ({
   children,
   variant = "primary",
   size = "md",
-  fullWidth = false,
   onClick,
   disabled = false,
-  ...rest
+  ...props
 }) => {
   return (
     <ButtonContainer
       variant={variant}
       size={size}
-      fullWidth={fullWidth}
       disabled={disabled}
       onClick={onClick}
+      {...props}
     >
       {children}
     </ButtonContainer>

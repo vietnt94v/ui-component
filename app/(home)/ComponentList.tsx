@@ -12,7 +12,7 @@ const ComponentList = () => {
         <li>
           <h3>Drawer</h3>
           <div>
-            <button onClick={() => setDrawerOpen(true)}>Show drawer</button>
+            <Button onClick={() => setDrawerOpen(true)}>Show drawer</Button>
             <Drawer isOpen={isDrawerOpen} onClose={() => setDrawerOpen(false)}>
               <div className="px-3">
                 <p>Drawer content</p>

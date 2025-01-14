@@ -7,7 +7,6 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
   variant?: TVariant;
   size?: TSize;
-  fullWidth?: boolean;
   onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
   disabled?: boolean;
 }

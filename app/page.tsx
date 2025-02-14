@@ -21,8 +21,6 @@ export default function Page() {
         <div className="p-4 flex flex-col gap-4">
           <h2 className="text-lg font-bold">Drawer Content</h2>
           <p>This is the drawer content.</p>
-
-          {/* Button đóng Drawer (giống click vào backdrop) */}
           <button
             className="px-4 py-2 bg-red-500 text-white rounded-lg shadow-lg hover:bg-red-600 transition"
             onClick={() => setIsDrawerOpen(false)}

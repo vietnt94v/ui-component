@@ -16,11 +16,11 @@ export type ColorPalette =
   | 'accent'
 
 export interface DrawerProps {
-  isOpen: boolean // Trạng thái mở/đóng Drawer
-  onClose: () => void // Hàm gọi khi đóng Drawer
-  children: ReactNode // Nội dung bên trong Drawer
-  colorPalette?: ColorPalette // Màu nền Drawer
-  size?: Size // Kích thước Drawer
-  placement?: Placement // Vị trí Drawer
-  contained?: boolean // Có bo góc và khoảng cách không
+  isOpen: boolean
+  onClose: () => void
+  children: ReactNode
+  colorPalette?: ColorPalette
+  size?: Size
+  placement?: Placement
+  contained?: boolean
 }

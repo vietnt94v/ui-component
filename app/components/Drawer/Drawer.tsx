@@ -35,7 +35,6 @@ const sizeMap: Record<Size, string> = {
   full: "w-screen",
 };
 
-// 🎯 DrawerContainer với hiệu ứng đóng
 const DrawerContainer = ({
   colorPalette,
   size,
@@ -57,7 +56,7 @@ const DrawerContainer = ({
           "left-0": placement === "start",
           "right-0": placement === "end",
           "rounded-lg p-4": contained,
-          "pointer-events-none": isClosing, // 🔥 Ngăn click và ẩn ngay khi bắt đầu đóng
+          "pointer-events-none": isClosing,
           "animate-slideInTop": !isClosing && placement === "top",
           "animate-slideOutTop": isClosing && placement === "top",
           "animate-slideInBottom": !isClosing && placement === "bottom",
@@ -85,26 +84,23 @@ const Drawer: React.FC<DrawerProps> = ({
   contained = false,
 }) => {
   const [isClosing, setIsClosing] = useState(false);
-  const [isRendered, setIsRendered] = useState(isOpen); // 🔥 Theo dõi trạng thái hiển thị
+  const [isRendered, setIsRendered] = useState(isOpen);
 
-  // Khi `isOpen` thay đổi, cập nhật `isRendered`
   useEffect(() => {
     if (isOpen) {
       setIsRendered(true);
     }
   }, [isOpen]);
 
-  // 🛠️ Đóng Drawer với hiệu ứng thoát
   const handleClose = useCallback(() => {
     setIsClosing(true);
     setTimeout(() => {
       setIsClosing(false);
-      setIsRendered(false); // 🔥 Chỉ unmount sau khi animation kết thúc
+      setIsRendered(false);
       onClose();
     }, 300);
   }, [onClose]);
 
-  // 🛠️ Đóng bằng phím ESC
   useEffect(() => {
     if (!isOpen) return;
 
@@ -120,13 +116,13 @@ const Drawer: React.FC<DrawerProps> = ({
     };
   }, [isOpen, handleClose]);
 
-  if (!isRendered) return null; // 🔥 Chỉ render nếu cần
+  if (!isRendered) return null;
 
   return ReactDOM.createPortal(
     <div
       className={clsx(
-        "fixed inset-0 flex justify-center items-center bg-black bg-opacity-60 z-50 transition-opacity duration-300",
-        { "opacity-0 pointer-events-none": isClosing }, // 🔥 Ngăn click và làm mờ trước khi unmount
+        "fixed inset-0 flex justify-center items-center bg-black bg-opacity-35 z-50 transition-opacity duration-300",
+        { "opacity-0 pointer-events-none": isClosing },
       )}
       onClick={handleClose}
     >
